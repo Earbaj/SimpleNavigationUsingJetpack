@@ -21,6 +21,8 @@
         tools:layout="@layout/fragment_blank_b" >
         <action
             android:id="@+id/action_blankB_to_blankA"
-            app:destination="@id/blankA" />
+            app:destination="@id/blankA"
+            app:popUpTo="@id/blankA"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

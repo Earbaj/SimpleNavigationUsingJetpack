@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.navigationjetpack.R
 
 /**
@@ -19,7 +21,14 @@ class BlankB : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank_b, container, false)
+        val view = inflater.inflate(R.layout.fragment_blank_b, container, false)
+        //Linking button with xmml
+        val button = view.findViewById<Button>(R.id.button)
+        //OnClick methode for navigate between fragments
+        button.setOnClickListener {
+            findNavController().navigate(R.id.action_blankB_to_blankA)
+        }
+        return view.rootView
     }
 
 }
